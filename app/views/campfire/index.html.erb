@@ -1,0 +1,17 @@
+<div class="field">
+  <label for="username">What should we call you? <span class="note">(Change this at any time)</span></label>
+  <input id="username" type="text" name="username" placeholder="Username">
+</div>
+
+<div class="field">
+  <label for="text">Say something to the campfire...</label>
+  <input id="speak" type="text" name="speak" data-behavior="speak" placeholder="Message">
+</div>
+
+<div class="field actions">
+  <button id="submit">Post</button>
+</div>
+
+<div id="messages">
+  <%= render @messages %>
+</div>

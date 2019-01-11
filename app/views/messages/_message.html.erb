@@ -1,0 +1,11 @@
+<%= cache message do %>
+  <article data-message-id="<%= message.id %>">
+    <div class="username" style="color: <%= message.color %>">
+      <%= message.username %>
+    </div>
+
+    <div class="content">
+      <%= message.content %>
+    </div>
+  </article>
+<% end %>
