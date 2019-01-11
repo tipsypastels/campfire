@@ -22,8 +22,8 @@ submit = (event) ->
     content: content
     color: randomColor(seed: username, luminosity: 'light')
 
+  $('#speak').val('')
   App.campfire.speak(data)
-  event.target.value = ''
   event.preventDefault()
 
 $ ->
