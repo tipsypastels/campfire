@@ -23,8 +23,21 @@ h1 {
   font-family: Righteous;
   font-size: 3em;
   text-align: center;
+  margin-top: 0;
 }
 
+small {
+  font-family: Righteous;
+  display: block;
+  text-align: center;
+  font-size: 0.9em;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+}
 label, input {
   display: block;
 }
@@ -68,15 +81,35 @@ input {
   }
 }
 
+.username {
+  font-weight: bold;
+}
+
 article {
   font-size: 1.3em;
   margin-bottom: 1em;
 
-  .username {
-    font-weight: bold;
-  }
+  .content {
+    img {
+      max-width: 100%;
+    }
 
-  img {
-    max-width: 100%;
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.user-bar {
+  display: flex;
+  
+  label {
+    flex-grow: 1;
   }
 }

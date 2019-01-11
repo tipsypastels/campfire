@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+colorOf = (username) ->
+  randomColor(seed: username, luminosity: 'light')
+
 submitViaEnter = (event) ->
   return if event.keyCode isnt 13
   submit event
@@ -20,7 +23,7 @@ submit = (event) ->
   data =
     username: username
     content: content
-    color: randomColor(seed: username, luminosity: 'light')
+    color: colorOf(username)
 
   $('#speak').val('')
   App.campfire.speak(data)
@@ -29,3 +32,20 @@ submit = (event) ->
 $ ->
   $(document).on 'click', '#submit', submit
   $(document).on 'keypress', '[data-behavior~=speak]', submitViaEnter
+
+  $(document).on 'change', '#username', (event) ->
+    console.log 'hi'
+    username = event.target.value
+
+    unless username
+      $('#you-are').html('')
+      return
+
+    format = """
+      You are <span class="username" style="color: #{colorOf(username)}">
+        #{username}
+      </span>
+    """
+    console.log format
+
+    $('#you-are').html(format)

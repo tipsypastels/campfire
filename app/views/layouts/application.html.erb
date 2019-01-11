@@ -13,7 +13,13 @@
 
   <body>
     <main>
-      <h1>Campfire</h1>
+      <small>
+        (<%= link_to 'github', 'https://github.com/tipsypastels/campfire', target: '_blank' %>, <%= link_to 'tipsypastels', 'https://twitter.com/tipsypastels', target: '_blank' %>)
+      </small>
+      
+      <h1>
+        Campfire
+      </h1>
       <%= yield %>
     </main>
   </body>
