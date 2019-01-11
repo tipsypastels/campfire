@@ -34,7 +34,6 @@ $ ->
   $(document).on 'keypress', '[data-behavior~=speak]', submitViaEnter
 
   $(document).on 'change', '#username', (event) ->
-    console.log 'hi'
     username = event.target.value
 
     unless username
@@ -46,6 +45,5 @@ $ ->
         #{username}
       </span>
     """
-    console.log format
 
     $('#you-are').html(format)
