@@ -14,6 +14,8 @@ class MessageBuilder
   def to_message!
     @data['content'].gsub!(/#{SUB_KEYS}/) { |kword|
       SUBSTITUTIONS[kword.delete('/').to_sym]
+        .gsub('USERNAME', @data['username'])
+        .gsub('COLOR', @data['color'])
     }
 
     Message.create!(@data)
