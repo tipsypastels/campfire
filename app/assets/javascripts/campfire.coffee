@@ -50,4 +50,4 @@ $ ->
     """
 
     $('#you-are').html(format)
-    App.campfire.setName({ username })
+    # App.campfire.setName({ username })
