@@ -10,4 +10,8 @@ class CampfireChannel < ApplicationCable::Channel
   def speak(data)
     MessageBuilder.new(data).to_message!
   end
+
+  def set_name(data)
+    UsernameChanger.new(data).change!
+  end
 end

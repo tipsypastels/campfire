@@ -2,7 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-colorOf = (username) ->
+@currentUsername = undefined
+
+@colorOf = (username) ->
   randomColor(seed: username, luminosity: 'light')
 
 submitViaEnter = (event) ->
@@ -38,6 +40,7 @@ $ ->
 
     unless username
       $('#you-are').html('')
+      window.currentUsername = undefined
       return
 
     format = """
@@ -47,3 +50,4 @@ $ ->
     """
 
     $('#you-are').html(format)
+    App.campfire.setName({ username })

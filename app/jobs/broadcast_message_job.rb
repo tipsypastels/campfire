@@ -4,6 +4,7 @@ class BroadcastMessageJob < ApplicationJob
   def perform(message)
     ActionCable.server.broadcast('campfire_channel',
       message: render_message(message).squish,
+      type: 'new_message',
     )
   end
 

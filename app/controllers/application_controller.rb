@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
     @markdown.render(content).html_safe
   end
   helper_method :markdown
+
+  def online_usernames
+    @online_usernames ||= []
+  end
 end

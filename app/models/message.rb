@@ -9,4 +9,8 @@ class Message < ApplicationRecord
 
   validates :content, :username, :color, 
     presence: true
+
+  def system_message?
+    username == system
+  end
 end
