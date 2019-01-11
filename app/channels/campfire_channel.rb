@@ -8,10 +8,6 @@ class CampfireChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create!(
-      content: data['content'],
-      username: data['username'],
-      color: data['color'],
-    )
+    MessageBuilder.new(data).to_message!
   end
 end

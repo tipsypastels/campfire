@@ -4,8 +4,12 @@
 
 $bg-color: #50303d;
 $font-color: #cab871;
+$block-color: darken($bg-color, 8%);
 
 @import url('https://fonts.googleapis.com/css?family=Righteous|Roboto');
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 body {
   background-color: $bg-color;
@@ -17,6 +21,24 @@ main {
   max-width: 700px;
   margin: auto;
   margin-top: 2em;
+}
+
+.block {
+  background-color: $block-color;
+  padding: 1em;
+  font-size: 1.2em;
+  font-style: italic;
+  border-radius: 10px;
+
+  margin-bottom: 2em;
+
+  div:last-child {
+    margin-top: 10px;
+  }
+}
+
+.strongdiv {
+  font-weight: bold;
 }
 
 h1 {
@@ -51,7 +73,7 @@ input {
   width: 100%;
   padding: 1em;
   color: $font-color;
-  background-color: darken($bg-color, 8%);
+  background-color: $block-color;
   font-size: 1.15em;
   border-radius: 10px;
   margin-top: 5px;
@@ -75,7 +97,7 @@ input {
     border: none;
     text-transform: uppercase;
     background-color: $font-color;
-    color: darken($bg-color, 8%);
+    color: $block-color;
     font-weight: bold;
     padding: 0.5em 1em;
   }
@@ -86,24 +108,37 @@ input {
 }
 
 article {
-  font-size: 1.3em;
   margin-bottom: 1em;
+  
+  display: flex;
+  align-items: center;
 
-  .content {
-    img {
-      max-width: 100%;
-    }
+  .icon-column {
+    font-size: 2em;
+    margin-right: 0.5em;
+    transform: scaleX(-1);
+  }
 
-    p {
-      &:first-child {
-        margin-top: 0;
+  .main-column {
+    font-size: 1.3em;
+
+    .content {
+      img {
+        max-width: 100%;
       }
 
-      &:last-child {
-        margin-bottom: 0;
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
+
 }
 
 .user-bar {

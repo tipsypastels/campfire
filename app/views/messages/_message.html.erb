@@ -1,11 +1,17 @@
 <%= cache message do %>
   <article data-message-id="<%= message.id %>">
-    <div class="username" style="color: <%= message.color %>">
-      <%= message.username %>
+    <div class="icon-column">
+      <%= icon('far', 'comment-alt', style: "color: #{message.color}") %>
     </div>
 
-    <div class="content">
-      <%= markdown message.content %>
-    </div>
-  </article>
+    <div class="main-column">
+      <div class="username" style="color: <%= message.color %>">
+        <%= message.username %>
+      </div>
+
+      <div class="content">
+        <%= markdown message.content %>
+      </div>
+    </article>
+  </div>
 <% end %>
